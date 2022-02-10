@@ -24,12 +24,33 @@ describe("My first framework test",function()
         homepage.GetRadio().should('be.disabled')
         homepage.GetDatabindling().should('have.value',this.data.name)
         homepage.GetSubmit().click()
+       
         homepage.GetSuccess().contains('Success!')
         homepage.GetProduct().click()
+       
         this.data.productname.forEach(function(element){
             cy.selectproduct(element)
         }) 
+      
         productpage.GetCheckout().click()
+        var sum =0
+        cy.get("tr td:nth-child(4) strong").each(($el,index,list) =>{
+           const amount = $el.text()
+           var res= amount.split(" ")
+            const result=res[1].trim()
+            sum= Number(sum)+Number(result)
+            
+
+        }).then(function(){
+
+            cy.log(sum)
+        })
+       cy.get("h3 strong").then(function(element){
+        const amount = element.text()
+        var res= amount.split(" ")
+         const result=res[1].trim()
+         expect(Number(sum)).to.equal(Number(result))
+       })
         productpage.ShopCheckout().click()
         productpage.GetAddress().type("India")
         productpage.GetchooseAddress().should('be.visible').click()

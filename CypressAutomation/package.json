@@ -10,7 +10,7 @@
   "author": "chandrima",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^9.1.1"
+    "cypress": "^9.4.1"
   },
   "dependencies": {
     "cypress-iframe": "^1.0.1"
