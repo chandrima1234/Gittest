@@ -23,6 +23,12 @@ class ProductPage
    GetText(){
        return cy.get('.alert')
    }
+ GetAmmount(){
+     return cy.get("tr td:nth-child(4) strong")
+ }
+ GetTotal(){
+     return cy.get("h3 strong")
+ }
   
 }
 export default ProductPage

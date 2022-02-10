@@ -1,4 +1,8 @@
 {
   "projectId": "yfcmjw",
-  "defaultCommandTimeout": 10000
+  "defaultCommandTimeout": 10000,
+
+"env" :{
+    "url":"https://rahulshettyacademy.com"
+}
 }

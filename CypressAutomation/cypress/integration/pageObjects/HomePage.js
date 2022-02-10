@@ -3,7 +3,8 @@ class HomePage
 
 {
     GetUrl(){
-        return cy.visit("https://rahulshettyacademy.com/angularpractice/")
+        //base url and concate the sub domain
+        return cy.visit(Cypress.env('url')+"/angularpractice/")
     }
 
     GetName(){

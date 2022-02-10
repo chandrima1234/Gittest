@@ -34,7 +34,7 @@ describe("My first framework test",function()
       
         productpage.GetCheckout().click()
         var sum =0
-        cy.get("tr td:nth-child(4) strong").each(($el,index,list) =>{
+        productpage.GetAmmount().each(($el,index,list) =>{
            const amount = $el.text()
            var res= amount.split(" ")
             const result=res[1].trim()
@@ -45,7 +45,7 @@ describe("My first framework test",function()
 
             cy.log(sum)
         })
-       cy.get("h3 strong").then(function(element){
+       productpage.GetTotal().then(function(element){
         const amount = element.text()
         var res= amount.split(" ")
          const result=res[1].trim()
