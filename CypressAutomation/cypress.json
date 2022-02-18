@@ -1,6 +1,13 @@
 {
-  "projectId": "yfcmjw",
+  "projectId": "hvbcam",
   "defaultCommandTimeout": 10000,
+  "pageLoadTimeout" :30000,
+  "reporter" : "mochawesome",
+  "testFiles": "**/*.feature",
+  "retries": {
+    "runMode": 2,
+    "openMode": 1
+  },
 
 "env" :{
     "url":"https://rahulshettyacademy.com"
